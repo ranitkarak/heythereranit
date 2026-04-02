@@ -2,93 +2,102 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GeoSmart • Country & Finance Insights</title>
+  <link rel="stylesheet" href="hey.css">
 </head>
+
 <body>
-    <h1 id="country-heading">Know About Countries!</h1>
-     <title>Know about your country </title>
 
-    <div>
-        <div>
-    <input type="text" id="countryInput" placeholder="facts about contries">
-    <button id="btn">Get Info</button>
-</div>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="logo">GeoSmart</div>
+    <ul class="nav-links">
+      <li>Home</li>
+      <li>Explore</li>
+      <li>Converter</li>
+    </ul>
+  </nav>
 
-<div>
-    <h2 id="title"></h2>
-    <img id="flag" />
-    <p id="desc"></p>
-</div>
-       <div class="country-search">
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <h1>Explore Countries & Currency Intelligence</h1>
+    <p>Real-time country insights and smart currency conversion in one place.</p>
+  </section>
 
-  <!-- Input + Button -->
-  <div class="search-box">
-    <input 
-      type="text" 
-      class="country-input" 
-      placeholder="Enter country name"
-    >
-    <button class="search-btn">Search</button>
-  </div>
+  <!-- MAIN CONTENT -->
+  <div id="loader" class="global-loader hidden"></div>
 
-  <!-- Result Display -->
-  <div class="result-container">
-    <!-- JS will insert data here -->
-  </div>
+  <main class="main-container">
 
-</div>
+    <!-- COUNTRY INFO -->
+    <section class="glass-card">
+      <h2>Country Insights</h2>
 
-<div class="result-container"></div>
-
-    </div>
-    <div id="countries-container"></div>
-
-  <div class="converter-container">
-     <div class="converter-box">
-
-      <div class="input-group">
-        <label class="input-label">Amount</label>
-        <input type="number" class="input-field amount-input" placeholder="Enter amount">
+      <div class="search-box">
+        <input type="text" id="countryInput" placeholder="Enter country name">
+        <button id="btn">Search</button>
       </div>
+
+      <div class="country-result">
+        <div class="skeleton hidden" id="country-skeleton"></div>
+        <h3 id="title"></h3>
+        <img id="flag" />
+        <p id="desc"></p>
+      </div>
+    </section>
+
+    <!-- QUICK LOOKUP -->
+    <section class="glass-card">
+      <h2>Quick Lookup</h2>
+
+      <div class="search-box">
+        <input type="text" class="country-input" placeholder="Search country">
+        <button class="search-btn">Search</button>
+      </div>
+
+      <div class="result-container">
+        <div class="skeleton hidden" id="quick-skeleton"></div>
+      </div>
+    </section>
+
+    <!-- CONVERTER -->
+    <section class="glass-card">
+      <h2>Currency Converter</h2>
+
+      <input type="number" class="amount-input" placeholder="Enter amount">
 
       <div class="dropdown">
+        <div class="select-group">
+          <img src="https://flagsapi.com/US/flat/32.png" />
+          <select class="currency-select" name="from"></select>
+        </div>
+
+        <div class="swap-icon">⇄</div>
 
         <div class="select-group">
-             <img src = "https://flagsapi.com/US/flat/32.png" />
-            
-          <label class="input-label">From</label>
-          <select  class = "currency-select" name="from">
-          </select>
+          <img src="https://flagsapi.com/US/flat/32.png" />
+          <select class="currency-select" name="to"></select>
         </div>
-
-        <div class="swap-icon">
-          ⇄
-        </div>
-
-        <div class="select-group">
-             <img src = "https://flagsapi.com/US/flat/32.png" />
-          <label class="input-label">To</label>
-          <select  class = "currency-select" name="to">
-          </select>                                                      
-        </div>
-
       </div>
 
-      <!-- Button -->
       <button class="convert-btn">Convert</button>
 
-      <!-- Result -->
       <div class="result-box">
-        <p class="result-text">Converted Amount:</p>
-        <h2 class="result-value">0.00</h2>
+        <h3 class="result-value">0.00</h3>
       </div>
+
       <button id="colorBtn">Theme</button>
+    </section>
 
-    </div>
+  </main>
 
-  </div>
-<script src="first1.js"></script>
-<script src="firstt.js"></script>
- <link rel="stylesheet" href="hey.css"></link>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>© 2026 GeoSmart • Built for real-world insights</p>
+  </footer>
+
+  <script src="app.js"></script>
+
 </body>
 </html>
